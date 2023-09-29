@@ -13,6 +13,11 @@ then
 			echo "school file is not empty"
 		fi
 		echo "school is a regular file"
+	else
+		if [ "$(find "$file" -maxdepth 0 -empty)" ]
+		then
+			echo "school file is not empty"
+		fi
 	fi
 else
 	echo "school file does not exist"
