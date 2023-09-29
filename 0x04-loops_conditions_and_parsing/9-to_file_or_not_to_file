@@ -6,13 +6,13 @@ then
 	echo "school file exists"
 	if [ -f "$file" ]
 	then
-		echo "school is a regular file"
 		if [ "$(wc -l < "$file")" -eq 0 ]
 		then
 			echo "school file is empty"
 		else
 			echo "school file is not empty"
 		fi
+		echo "school is a regular file"
 	fi
 else
 	echo "school file does not exist"
