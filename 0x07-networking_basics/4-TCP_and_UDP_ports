@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-
 # Use netstat to list listening sockets and their associated PIDs
+
 netstat -l --program
