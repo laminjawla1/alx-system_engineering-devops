@@ -2,4 +2,4 @@
 # ssh configuration
 Hosts *
 	PasswordAuthentication no
-	IdentifyFile ~/.ssh/school
+	IdentifyFile ~/.ssh/id_rsa
