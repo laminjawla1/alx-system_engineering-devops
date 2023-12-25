@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-ssh ubuntu@8.8.8.8
+# Uses the private in '~/.ssh/school and connects to the server on IP below'
+ssh -i ~/.ssh/school ubuntu@34.207.57.161
