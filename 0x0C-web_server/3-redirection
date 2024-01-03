@@ -8,7 +8,16 @@ sudo apt-get update -y
 # Install the nginx web server
 sudo apt-get install nginx -y
 
+# Allow the http protocol pass through the firewall
 sudo ufw allow 'Nginx HTTP'
+
+# Read the 'Hello World' string from the standard input and copy it into the specified file path
 echo "Hello World" | sudo tee /var/www/html/index
-sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/ permanent;' /etc/nginx/sites-available/default
+
+# Edit the '/etc/nginx/sites-available/default' in place
+# Search for the position of 'listen 80 default_server' in the specified file
+# and append 'rewrite ^/redirect_me https://www.youtube.com/@muslimsage/ permanent;' at the end
+sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/@muslimsage/ permanent;' /etc/nginx/sites-available/default
+
+# Start the nginx server
 sudo service nginx restart
