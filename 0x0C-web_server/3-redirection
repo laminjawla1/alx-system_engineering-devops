@@ -18,7 +18,7 @@ echo 'Hello World' | sudo tee /var/www/html/index
 # Edit the '/etc/nginx/sites-available/default' in place
 # Search for the position of 'listen 80 default_server' in the specified file
 # and append 'rewrite ^/redirect_me https://www.youtube.com/@muslimsage/ permanent;' at the end
-sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/@muslimsage/ permanent;' /etc/nginx/sites-available/default
+sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/ permanent;' /etc/nginx/sites-available/default
 
 # Start the nginx server
 sudo service nginx restart
