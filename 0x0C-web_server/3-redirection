@@ -5,6 +5,9 @@
 # Update and the server
 sudo apt-get update -y
 
+# Install the nginx web server
+sudo apt-get install nginx
+
 # Allow the http protocol pass through the firewall
 sudo ufw allow 'Nginx HTTP'
 
