@@ -14,13 +14,13 @@ echo "Hello World!" | sudo tee /var/www/html/index.html > /dev/null
 # Edit the '/etc/nginx/sites-available/default' in place
 # Search for the position of 'listen 80 default_server' in the specified file
 # and append 'rewrite ^/redirect_me https://www.youtube.com/@muslimsage/ permanent;' at the end
-sed -i "46i rewrite ^/redirect_me https://www.youtube.com/@muslimsage permanent;" /etc/nginx/sites-available/default
+sudo sed -i "46i rewrite ^/redirect_me https://www.youtube.com/@muslimsage permanent;" /etc/nginx/sites-available/default
 
 # Create a custom 404 page
 echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html > /dev/null
 
 # Register the new 404 page
-sed -i "46i error_page 404 /custom_404.html;" /etc/nginx/sites-available/default
+sudo sed -i "46i error_page 404 /custom_404.html;" /etc/nginx/sites-available/default
 
 # Start the nginx server
-service nginx restart
+sudo service nginx restart
