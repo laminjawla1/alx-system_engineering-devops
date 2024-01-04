@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Update the server
-sudo apt update -y
+apt update -y
 # Install the apache web server
-sudo apt install apache2 -y
+apt install apache2 -y
 # Start the apache server
