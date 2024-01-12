@@ -7,4 +7,4 @@ cd /etc/nginx/sites-enabled/ || exit;
 rm default;
 # Recreate the symlink and restart the server
 ln -s /etc/nginx/sites-available/default default;
-sudo server nginx restart;
+sudo service nginx restart;
