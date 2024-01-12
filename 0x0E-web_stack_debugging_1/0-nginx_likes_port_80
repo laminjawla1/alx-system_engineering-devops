@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
-
-# Navigate into the sites enabled folder
-# if it does not exist, exit
-cd /etc/nginx/sites-enabled/ || exit;
-# Delete the default symlink
-rm default;
+# Delete the default config
+rm -f /etc/nginx/sites-enabled/default;
 # Recreate the symlink and restart the server
-ln -s /etc/nginx/sites-available/default default;
-sudo service nginx restart;
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default;
+service nginx restart;
