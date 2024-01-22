@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script install and configure the ufw firewall
+
+# Update the system packgaes
+sudo apt-get update -y
+# Upgrade the system packages
+sudo apt-get upgrade -y
+# Install the ufw firewall
+sudo apt-get install ufw -y
+# Deny all incoming traffick
+sudo ufw default deny incoming
+# Allow all outgoing traffick
+sudo ufw default allow outgoing
+# All port 22, 443 and 80
+sudo ufw allow 22/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 80/tcp
+# Enable the firewall
+sudo ufw enable
