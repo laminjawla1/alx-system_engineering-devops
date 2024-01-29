@@ -16,11 +16,8 @@ def main():
 
     todos_completed = get_total_todos_completed(todos)
     with open("{}.csv".format(user.get("id")), "w", newline="") as csvfile:
-        headers = [
-                "USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
         writer = csv.writer(csvfile)
 
-        writer.writerow(headers)
         for todo in todos:
             writer.writerow(
                 [
