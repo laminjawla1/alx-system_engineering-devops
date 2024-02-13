@@ -4,10 +4,10 @@ Script to make request to the reddit API
 and compute the total subscribers of
 a specifit subreddit
 """
-import requests
 
 
 def number_of_subscribers(subreddit):
+    import requests
     response = requests.get(
         "https://www.reddit.com/r/{}/about.json".format(subreddit),
         headers={"User-Agent": "Agent-Lamin"},
