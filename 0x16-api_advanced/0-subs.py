@@ -4,12 +4,11 @@ A script to get the total subscribers
 of a specified subreddit
 """
 import requests
-import sys
 
 
 def number_of_subscribers(subreddit):
     response = requests.get(
-        "https://www.reddit.com/r/{}/about.json".format(sys.argv[1]),
+        "https://www.reddit.com/r/{}/about.json".format(subreddit),
         headers={"User-Agent": "I-Am-Agent-Sage"},
         allow_redirects=False,
     )
