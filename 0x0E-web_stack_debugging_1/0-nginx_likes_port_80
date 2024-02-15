@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Delete the default config
+rm -f /etc/nginx/sites-enabled/default;
+# Recreate the symlink and restart the server
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default;
+service nginx restart;

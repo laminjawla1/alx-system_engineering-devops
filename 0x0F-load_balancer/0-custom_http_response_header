@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# This script confugures web-02 to be identical to web-01
+
+# Make the system aware of the available packages
+apt-get update
+
+# Install the nginx web server
+apt-get install nginx -y
+
+# Create the html directory inside /var/www/
+mkdir -p /var/www/html
+
+# Create the index.html file with 'Hello World'
+echo "Hello World" > /var/www/html/index.html
+
+# Create a cutom 404 page
+echo "Ceci n'ets pas une page" > /var/www/html/custom_404.html
+
+printf %s "server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	add_header X-Served-By $HOSTNAME;
+	root /var/www/html;
+	index index.html index.htm;
+
+	location /redirect_me {
+		return 301 https://www.youtube.com/@muslimsage;
+	}
+
+	error_page 404 /custom_404.html;
+	location /404 {
+		root /var/www/html;
+		internal;
+	}
+}" > /etc/nginx/sites-available/default
+
+# Restart the bgix web server
+service nginx restart
